@@ -1,0 +1,18 @@
+appium-android:
+  image: appium
+  privileged: true
+  container_name: appium
+  volumes:
+    - /dev/bus/usb:/dev/bus/usb
+    - ./VodQA.apk:/opt/VodQA.apk
+  ports:
+    - 4723:4723
+
+java-maven:
+  image: javamvn
+  container_name: javamvn
+  volumes:
+    - ./:/home
+  command: mvn clean test
+  links:
+    - appium-android:localhost
