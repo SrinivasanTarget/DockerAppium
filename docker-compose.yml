@@ -1,5 +1,5 @@
 appium-android:
-  image: appium
+  image: appium/appium
   privileged: true
   container_name: appium
   volumes:
@@ -9,7 +9,7 @@ appium-android:
     - 4723:4723
 
 java-maven:
-  image: javamvn
+  image: srinivasansekar/javamvn
   container_name: javamvn
   volumes:
     - ./:/home
